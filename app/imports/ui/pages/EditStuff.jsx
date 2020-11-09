@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, Loader, Image, Segment } from 'semantic-ui-react';
-import {DateField, SelectField, TextField} from 'uniforms-semantic';
+import { Grid, Loader, Image, Segment, Button } from 'semantic-ui-react';
+import {DateField, SelectField, TextField } from 'uniforms-semantic';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -45,6 +45,9 @@ class EditStuff extends React.Component {
              </Segment>
              <Segment>
                   <h1>Map View</h1>
+                 <Button color='green'>Buildings</Button>
+                 <Button color='green'>Floors</Button>
+                 <Button color='green'>Dorms</Button>
              </Segment>
             </Grid>
         </Grid>
