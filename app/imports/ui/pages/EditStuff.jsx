@@ -1,14 +1,11 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Image, Segment } from 'semantic-ui-react';
+import {DateField, SelectField, TextField} from 'uniforms-semantic';
 import swal from 'sweetalert';
-import { AutoForm, ErrorsField, HiddenField, NumField, SelectField, SubmitField, TextField } from 'uniforms-semantic';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { Stuffs } from '../../api/stuff/Stuff';
-
-const bridge = new SimpleSchema2Bridge(Stuffs.schema);
 
 /** Renders the Page for editing a single document. */
 class EditStuff extends React.Component {
@@ -29,20 +26,27 @@ class EditStuff extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Stuff</Header>
-            <AutoForm schema={bridge} onSubmit={data => this.submit(data)} model={this.props.doc}>
-              <Segment>
-                <TextField name='name'/>
-                <NumField name='quantity' decimal={false}/>
-                <SelectField name='condition'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-                <HiddenField name='owner' />
-              </Segment>
-            </AutoForm>
+        <Grid container>
+          <Grid.Column width={8}>
+            <Image src=""
+                   floated='left' size='huge' alt="filler placement for eventual map"/>
           </Grid.Column>
+            <Grid container width={8}>
+            <h1>Filters</h1>
+            <Segment>
+                  <SelectField name='Building'/>
+                  <DateField name='Date'/>
+                  <TextField name='Threshold' decimal={false}/>
+                  // Will use DateInput
+            </Segment>
+            <Segment>
+                  <h1>Violations</h1>
+                  <p>Top Three: </p>
+             </Segment>
+             <Segment>
+                  <h1>Map View</h1>
+             </Segment>
+            </Grid>
         </Grid>
     );
   }
