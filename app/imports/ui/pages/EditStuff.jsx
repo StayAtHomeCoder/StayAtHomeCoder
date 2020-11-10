@@ -26,29 +26,36 @@ class EditStuff extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <Grid container>
-          <Grid.Column width={8}>
-            <Image src=""
-                   floated='left' size='huge' alt="filler placement for eventual map"/>
-          </Grid.Column>
-            <Grid container width={8}>
-            <h1>Filters</h1>
-            <Segment>
-                  <SelectField name='Building'/>
-                  <DateField name='Date'/>
-                  <TextField name='Threshold' decimal={false}/>
-                  // Will use DateInput
-            </Segment>
-            <Segment>
-                  <h1>Violations</h1>
-                  <p>Top Three: </p>
-             </Segment>
-             <Segment>
-                  <h1>Map View</h1>
-                 <Button color='green'>Buildings</Button>
-                 <Button color='green'>Floors</Button>
-                 <Button color='green'>Dorms</Button>
-             </Segment>
+        <Grid borderless>
+            <Grid.Column width={8}>
+                <Image src="https://upload.wikimedia.org/wikipedia/commons/2/27/Wkipedia_blank_world_map.jpg"
+                       floated='left' size='huge' alt="filler placement for eventual map"/>
+            </Grid.Column>
+            <Grid container className='filters' width={16}>
+                <Grid.Column left width={6}>
+                    <div className='violations'>
+                        <h2>Filters</h2>
+                    </div>
+                </Grid.Column>
+                <Grid.Column centered width={4}>
+                    <div className='violations'>
+                        <h2>Violations</h2>
+                        <p>Top Three: </p>
+                    </div>
+                </Grid.Column>
+                <Grid.Column right width={6}>
+                    <div className='map-view'>
+                        <h2>Map View</h2>
+                        <Button size='large' color='green'>Buildings</Button>
+                        <Button size='large' color='green'>Floors</Button>
+                        <Button size='large' color='green'>Dorms</Button>
+                        <div className='map-stack'>
+                            <Button size='large' color='green'>Libraries</Button>
+                            <Button size='large' color='green'> Study </Button>
+                            <Button size='large' color='green'>Eateries</Button>
+                        </div>
+                    </div>
+                </Grid.Column>
             </Grid>
         </Grid>
     );
