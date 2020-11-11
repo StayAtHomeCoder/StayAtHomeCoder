@@ -7,8 +7,6 @@ import HistoryView from '../pages/HistoryView';
 import MapView from '../pages/MapView';
 import Landing from '../pages/Landing';
 
-
-
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
