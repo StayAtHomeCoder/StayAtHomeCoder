@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Button, Image, Form } from 'semantic-ui-react';
 
-/** Renders the Page for adding a document. */
 class MapView extends React.Component {
     /** IMAGES AS TEMP PLACEHOLDERS FOR MAPS */
     render() {
