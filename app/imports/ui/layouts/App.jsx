@@ -2,9 +2,12 @@ import React from 'react';
 import 'semantic-ui-css/semantic.css';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import NavBar from '../components/NavBar';
+
 import HistoryView from '../pages/HistoryView';
 import MapView from '../pages/MapView';
 import Landing from '../pages/Landing';
+
+
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {

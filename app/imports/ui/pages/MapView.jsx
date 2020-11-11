@@ -1,6 +1,8 @@
 import React from 'react';
 import { Grid, Button, Image, Form } from 'semantic-ui-react';
 
+
+
 class MapView extends React.Component {
     /** IMAGES AS TEMP PLACEHOLDERS FOR MAPS */
     render() {
